@@ -1,0 +1,19 @@
+html
+    body
+        h1 #{title}
+        table
+            tr
+                th id
+                th userId
+                th message
+                th completion
+            each todo in todos
+                tr
+                    th #{todo.id}
+                    th #{todo.userId}
+                    th #{todo.message}
+                    th
+                        if (todo.completion)
+                            input(type='checkbox', name='completion', value=todo.completion, checked='1', id=todo.id)
+                        else
+                            input(type='checkbox', name='completion', value=todo.completion, id=todo.id)

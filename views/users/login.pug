@@ -1,0 +1,12 @@
+html
+    body
+        h1 #{title}
+        form(action='/login', method='post')
+            p
+                | name :
+                input(type='text', name='name', value='')
+            p
+                | pwd :
+                input(type='password', name='pwd', value='')
+            input(type='submit', value='Login')
+

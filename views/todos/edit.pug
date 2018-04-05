@@ -1,0 +1,21 @@
+html
+    body
+        h1 #{title}
+        form(action='/todos/' + todo.id+'?_method=PATCH', method='post' enctype="application/x-www-form-urlencoded")
+            input(type='hidden', name='_method', value='patch')
+            p
+                | Message :
+                input(type='text', name='message', value=todo.message)
+            p
+                | Completion :
+                select(name='completion')
+                    if (!todo.completion)
+                        option(value='0', selected) Todo
+                        option(value='1') Done
+                    else
+                        option(value='0') Todo
+                        option(value='1', selected) Done
+            input(type='submit', value='Modifier')
+        form(action='/todos/' + todo.id+'?_method=DELETE', method='post')
+            input(type='hidden', name='_method', value='delete')
+            input(type='submit', value='Supprimer')

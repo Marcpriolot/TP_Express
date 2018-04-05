@@ -1,0 +1,20 @@
+html
+    body
+        h1 #{title}
+        table
+            each user in users
+                tr
+                    th id
+                    th #{user.id}
+                tr
+                    th name
+                    th #{user.name}
+                tr
+                    th pwd
+                    th #{user.pwd}
+                tr
+                    th createdAt
+                    th #{user.createdAt}
+                tr
+                    th updatedAt
+                    th #{user.updatedAt}

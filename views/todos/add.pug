@@ -1,0 +1,15 @@
+html
+    body
+        h1 #{title}
+        form(action='/todos/', method='post')
+            p
+                | La tâche :
+                input(type='text', name='message', value='')
+            p
+                | Completion :
+                select(name='completion')
+                    option(value='0') Todo
+                    option(value='1') Done
+
+            input(type='submit', value='Ajouter')
+
